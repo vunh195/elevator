@@ -1,0 +1,7 @@
+/workspaces/be/src/main/java/com/elevator/domain/Elevator.java
+/workspaces/be/src/main/java/com/elevator/service/ElevatorService.java
+/workspaces/be/src/main/java/com/elevator/domain/dto/ElevatorRequest.java
+/workspaces/be/src/main/java/com/elevator/repository/ElevatorRepository.java
+/workspaces/be/src/main/java/com/elevator/App.java
+/workspaces/be/src/main/java/com/elevator/domain/enumeration/ElevatorStatus.java
+/workspaces/be/src/main/java/com/elevator/rest/ElevatorResource.java

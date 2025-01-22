@@ -1,0 +1,10 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/java-postgres
+{
+  "name": "Elevator app with spring boot and reactjs",
+  "dockerComposeFile": ["docker-compose.yml"],
+  "service": "be",
+  "workspaceFolder": "/workspaces",
+  "forwardPorts": [5432, 5173, 8080, 3306],
+  "runServices": ["db"]
+}

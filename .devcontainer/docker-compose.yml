@@ -1,0 +1,47 @@
+
+volumes:
+  mysql-data:
+
+services:
+  # fe:
+  #   container_name: fe
+  #   build: 
+  #     context: ../fe
+  #     dockerfile: ../fe/Dockerfile
+  #   ports:
+  #       - "5173:5173"
+  #   volumes:
+  #     - ../:/workspaces
+  #     - /workspaces/fe/node_modules
+  #   command: sleep infinity
+  be:
+    container_name: elevator-be
+    build: 
+      context: ../be
+      dockerfile: ../be/Dockerfile
+    volumes:
+      - ../:/workspaces
+    command: sleep infinity
+    ports:
+      - "8080:8080"
+    networks:
+      - elevator-network
+
+  db:
+    container_name: elevator-db
+    image: mysql:latest
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: elevator_db
+    networks:
+      - elevator-network
+networks:
+  elevator-network:
+    driver: bridge
+ 
